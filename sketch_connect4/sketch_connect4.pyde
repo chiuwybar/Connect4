@@ -22,10 +22,16 @@ def draw():
     
     # 7(horizonal) x 6 (vertical)
     fill ("#FFFFFF")
-    #ellipse (210, 140, 70, 70)
-    #ellipse (290, 140, 70, 70)
-    x_pos = 210
-    for i in range (1, 8):
-        ellipse (x_pos, 140, 70, 70)
-        x_pos = x_pos + 80
+    
+    # y position for first circle
+    y_pos = 140
+    for columns in range (1, 7):
+        # x position for first circle
+        x_pos = 210
+        
+        #Row of circles
+        for i in range (1, 8):
+            ellipse (x_pos, y_pos, 70, 70)
+            x_pos = x_pos + 80
+        y_pos = y_pos + 80
     
