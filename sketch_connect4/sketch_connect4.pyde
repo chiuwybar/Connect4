@@ -18,7 +18,7 @@ def draw():
     
     #blue square board
     fill ("#0000FF")
-    rect (150, 85, 600, 600)
+    rect (150, 85, 600, 500)
     
     # 7(horizonal) x 6 (vertical)
     fill ("#FFFFFF")
@@ -34,4 +34,5 @@ def draw():
             ellipse (x_pos, y_pos, 70, 70)
             x_pos = x_pos + 80
         y_pos = y_pos + 80
-    
+        
+        
