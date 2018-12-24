@@ -35,4 +35,18 @@ def draw():
             x_pos = x_pos + 80
         y_pos = y_pos + 80
         
+        #2 player game
         
+        #Red and yellow poeces
+        
+        #Instructions screen
+        
+        #You win screen
+        
+        #You lose screen
+        
+        #You tied screen
+        
+        #Animations
+        
+        #Beige backround
