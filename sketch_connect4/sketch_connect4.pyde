@@ -29,6 +29,7 @@ def draw():
         # x position for first circle
         x_pos = 210
         
+        fill ("#FFFFFF")
         #Row of circles
         for i in range (1, 8):
             ellipse (x_pos, y_pos, 70, 70)
@@ -50,3 +51,7 @@ def draw():
         #Animations
         
         #Beige backround
+        
+        fill ("#FF0000")
+        ellipse (210, 40, 70, 70)
+        
