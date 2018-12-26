@@ -1,13 +1,16 @@
 x = 0
-
+y = 0
 def setup():
     size (900, 700)
 
 def draw():
     global x
+    global y
     if x >= 640:
         x = 0
     x += 1
+    if y >= 700:
+        y = 0
     background(244, 222, 179) 
     
     #pieces?
