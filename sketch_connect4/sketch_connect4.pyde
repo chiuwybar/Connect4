@@ -6,16 +6,20 @@ def setup():
 def draw():
     global x
     global y
-    if x >= 640:
-        x = 0
-    x += 1
-    if y >= 700:
-        y = 0
+    #if x >= 640:
+        #x = 0
+    y += 5
+    if y >= 541:
+        y = 541
+    
+        
     background(244, 222, 179) 
     
     #pieces?
     #fill ("#B22222")
     #ellipse(x, 50, 80, 80)
+    
+
     
     #(x, y, width, height)
     
@@ -31,7 +35,7 @@ def draw():
     for columns in range (1, 7):
         # x position for first circle
         x_pos = 210
-        
+
         fill ("#FFFFFF")
         #Row of circles
         for i in range (1, 8):
@@ -56,5 +60,5 @@ def draw():
         #Beige backround
         
         fill ("#FF0000")
-        ellipse (210, 40, 70, 70)
+        ellipse (210, y, 70, 70)
         
