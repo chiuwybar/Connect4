@@ -62,3 +62,6 @@ def draw():
         fill ("#FF0000")
         ellipse (210, y, 70, 70)
         
+        
+        fill ("#FFFF00")
+        ellipse (290, y, 70, 70)
