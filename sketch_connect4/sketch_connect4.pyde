@@ -11,7 +11,7 @@ y = 50
 w = 900
 h = 700
 
-
+#set up
 def setup():
     size (w, h)
 
