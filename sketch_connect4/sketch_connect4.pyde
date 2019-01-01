@@ -1,17 +1,28 @@
+def startScreen():
+    background (0)
+    textAlign(CENTER)
+    text ("Click to start", height/2, width/2)
+    
+def startScreen():
+    background (255)    
+
 x = 0
-y = 0
+y = 50
+w = 900
+h = 700
+
+
 def setup():
-    size (900, 700)
+    size (w, h)
 
 def draw():
     global x
     global y
     #if x >= 640:
         #x = 0
-    y += 5
-    if y >= 541:
-        y = 541
-    
+    #y += 5
+    #if y >= 541:
+        #y = 541
         
     background(244, 222, 179) 
     
@@ -58,10 +69,13 @@ def draw():
         #Animations
         
         #Beige backround
+       
+       #red piece
+    fill ("#FF0000")
+    ellipse (210, y, 70, 70)
         
-        fill ("#FF0000")
-        ellipse (210, y, 70, 70)
-        
-        
-        fill ("#FFFF00")
-        ellipse (290, y, 70, 70)
+
+    #yellow piece
+    fill ("#FFFF00")
+    ellipse (mouseX, mouseY, 70, 70)
+    
