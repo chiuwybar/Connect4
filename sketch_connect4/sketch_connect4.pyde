@@ -5,7 +5,7 @@ def startScreen():
     
 def startScreen():
     background (255)    
-
+#variables
 x = 0
 y = 50
 w = 900
