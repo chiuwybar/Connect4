@@ -1,10 +1,10 @@
-def startScreen():
-    background (0)
-    textAlign(CENTER)
-    text ("Click to start", height/2, width/2)
+#def startScreen():
+    #background (0)
+    #textAlign(CENTER)
+    #text ("Click to start", height/2, width/2)
     
-def startScreen():
-    background (255)    
+#def startScreen():
+    #background (255)    
 #variables
 x = 0
 y = 50
@@ -77,5 +77,5 @@ def draw():
 
     #yellow piece
     fill ("#FFFF00")
-    ellipse (mouseX, mouseY, 70, 70)
+    ellipse (mouseX, y, 70, 70)
     
