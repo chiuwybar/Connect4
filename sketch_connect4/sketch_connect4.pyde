@@ -38,6 +38,11 @@ def draw():
     fill ("#0000FF")
     rect (150, 85, 600, 500)
     
+    #legs of board
+    fill ("#0000FF")
+    rect (150, 585, 18, 100)
+    rect (732, 585, 18, 100)
+    
     # 7(horizonal) x 6 (vertical)
     fill ("#FFFFFF")
     
@@ -56,6 +61,8 @@ def draw():
         
         #2 player game
         
+        #Still tryna figure out how to make player turns
+        
         #Red and yellow poeces
         
         #Instructions screen
@@ -70,12 +77,12 @@ def draw():
         
         #Beige backround
        
-       #red piece
+    #red piece
     fill ("#FF0000")
     ellipse (210, y, 70, 70)
         
 
-    #yellow piece
+    #yellow piece (moves horizontally with mouse)
     fill ("#FFFF00")
     ellipse (mouseX, y, 70, 70)
     
