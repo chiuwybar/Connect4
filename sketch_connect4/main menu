@@ -1,10 +1,3 @@
-#def startScreen():
-    #background (0)
-    #textAlign(CENTER)
-    #text ("Click to start", height/2, width/2)
-    
-#def startScreen():
-    #background (255)    
 #variables
 x = 0
 y = 45
@@ -13,6 +6,7 @@ turn = "N/A"
 time = 0
 
 def setup():
+    # window of game size
     size(900, 700)
 
 
@@ -29,6 +23,7 @@ def main_menu():
             fill(255,255,0)
             text("Start", 360, 410)
             if mousePressed:
+                #start game if start is clicked
                 screen = "Game"
         else:
             fill(165, 165, 0)
@@ -41,6 +36,7 @@ def main_menu():
             fill(255, 0, 0)
             text("Instructions", 305, 505)
             if mousePressed:
+                #instructions screen
                 screen = "Instructions"
     
         else:
@@ -147,8 +143,9 @@ def instructions():
             fill(255)
             rect(10, 10, 80, 30)
         fill(0)
-        text("Back", 16, 35)
-    
+        #back button
+        text("Back", 16, 35)    
+
 def draw():
     main_menu()
     game()
