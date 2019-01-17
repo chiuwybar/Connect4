@@ -9,7 +9,7 @@ def setup():
     # window of game size
     size(900, 700)
 
-
+#main menu
 def main_menu():
     global screen
     if screen == "Main menu":
