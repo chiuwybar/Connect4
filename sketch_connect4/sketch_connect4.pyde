@@ -63,19 +63,19 @@ def draw():
         
         #Still tryna figure out how to make player turns
         
-        #Red and yellow poeces
+        #Red and yellow pieces (done)
         
-        #Instructions screen
+        #Instructions screen(not done)
         
-        #You win screen
+        #You win screen(not done)
         
-        #You lose screen
+        #You lose screen(not done)
         
-        #You tied screen
+        #You tied screen(not done)
         
-        #Animations
+        #Animations(somewhat done)
         
-        #Beige backround
+        #Beige backround(done)
        
     #red piece
     fill ("#FF0000")
@@ -85,4 +85,3 @@ def draw():
     #yellow piece (moves horizontally with mouse)
     fill ("#FFFF00")
     ellipse (mouseX, y, 70, 70)
-    
