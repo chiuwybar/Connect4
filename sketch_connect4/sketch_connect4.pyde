@@ -75,8 +75,13 @@ def game():
             x_pos = 210
 
             fill ("#FFFFFF")
-        #Row of circles
+        #Row of circles initally white
             for i in range (1, 8):
+                
+                '''if ((x_pos == 210) and (y_pos == 540)):
+                    fill("#FFFF00")
+                else:
+                    fill("#FFFFFF")'''
                 ellipse (x_pos, y_pos, 70, 70)
                 x_pos = x_pos + 80
             y_pos = y_pos + 80
@@ -106,11 +111,13 @@ def game():
 
     #yellow piece (moves horizontally with mouse)
         if turn == "yellow":
-            fill ("#FFFF00")
+            # if i am over the bottom left circle then make the color yellow
+            if overCircle(210, 540, 70):
+                fill ("#FFFF00")
         elif turn == "red":
             fill ("#FF0000")
         #piece follows mouse
-        ellipse (mouseX, y , 70, 70)
+        ellipse (mouseX, 540 , 70, 70)
         #Changes turns (2 players)  #every 0.50 second, turn can be made
         if mousePressed == True and time + 500 <= millis():
             time = millis()
@@ -151,3 +158,7 @@ def draw():
     main_menu()
     game()
     instructions()
+    
+def overCircle(x, y, diameter):
+    distance = dist(x, y, mouseX, mouseY)
+    return distance < diameter / 2
