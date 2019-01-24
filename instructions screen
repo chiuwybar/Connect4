@@ -1,0 +1,15 @@
+        
+def instructions():
+    global screen
+    if screen == "Instructions":
+        background ("#0000FF")
+        textSize(30)
+        fill (255)
+        text("""-2 player game
+            
+    -4 in a row to win (Diagonally, 
+    Vertically, or Horizontally)
+    
+    -Click on piece to change turns (red and yellow)
+    
+    -Random choice on who goes first""",100, 100)

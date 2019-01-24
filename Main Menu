@@ -1,0 +1,20 @@
+main menu
+def main_menu():
+    global screen
+    if screen == "Main menu":
+        background("#0000FF")
+        textSize(64)
+        fill(255)
+        text("Connect 4", 280, 200)
+        fill(0)
+        rect(285,350,300,75)
+        if 585 > mouseX > 285 and 425 > mouseY > 350:
+            fill(255,255,0)
+            text("Start", 360, 410)
+            if mousePressed:
+                #start game if start is clicked
+                screen = "Game"
+        else:
+            fill(165, 165, 0)
+text("Start", 360, 410)
+
