@@ -1,6 +1,8 @@
   
 x = 0
 y_pos2 = 50
+colorCount = 1
+colorCode = "#FF0000"
 
 def setup():
     size(900, 700)
@@ -36,10 +38,21 @@ def draw():
         y_pos = y_pos + 80
     fill("#FFFF00")
     ellipse (210, y_pos2, 70, 70)
-    fill("#FFFF00")
+    
+    '''if mouseClicked:
+        fill(204)
+    else:    '''
+    fill(colorCode)
     ellipse (mouseX, 50 , 70, 70)
-    print ("THe value of x = " + str(mouseX))
-def mousePressed():
+    #print ("THe value of x = " + str(mouseX))
+def mouseClicked():
+    global colorCode
+    global colorCount
+    colorCount +=1
+    if colorCount % 2 > 0:
+        colorCode = "#FFFFF00"
+    else:
+        colorCode = "#FF0000"
     global x, y_pos2
     if y_pos2 == 50:
         y_pos2 += 90
