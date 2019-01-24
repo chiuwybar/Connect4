@@ -111,21 +111,27 @@ def game():
 
     #yellow piece (moves horizontally with mouse)
         if turn == "yellow":
+            
             # if i am over the bottom left circle then make the color yellow
             if overCircle(210, 540, 70):
                 fill ("#FFFF00")
         elif turn == "red":
             fill ("#FF0000")
+            drop(210,460)
         #piece follows mouse
-        ellipse (mouseX, 540 , 70, 70)
+        ellipse (mouseX, 50 , 70, 70)
         #Changes turns (2 players)  #every 0.50 second, turn can be made
         if mousePressed == True and time + 500 <= millis():
             time = millis()
             if turn == "yellow":
+                
                 turn = "red"
             else:
                 turn = "yellow"
-   
+def drop(x,y):
+    for i in range(50,540):    
+        ellipse (x, i , 70, 70)
+        i = i + 40
         
 def instructions():
     global screen
