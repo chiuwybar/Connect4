@@ -1,7 +1,9 @@
   
 x = 0
 y_pos2 = 50
+x_pos2=0
 colorCount = 1
+global colorCode
 colorCode = "#FF0000"
 
 def setup():
@@ -9,6 +11,7 @@ def setup():
     #noLoop()
 
 def draw():
+    global x_pos2
     background(204)
    # line(x, 0, x, height)
     
@@ -17,7 +20,7 @@ def draw():
     rect (150, 85, 600, 500)
     
     #legs of board
-    fill("#0000FF")
+
     rect(150, 585, 18, 100)
     rect(732, 585, 18, 100)
     
@@ -37,14 +40,23 @@ def draw():
             x_pos = x_pos + 80
         y_pos = y_pos + 80
     fill("#FFFF00")
-    ellipse (210, y_pos2, 70, 70)
+    ellipse (x_pos2, y_pos2, 70, 70)
     
     '''if mouseClicked:
         fill(204)
     else:    '''
     fill(colorCode)
     ellipse (mouseX, 50 , 70, 70)
-    #print ("THe value of x = " + str(mouseX))
+    if (210< mouseX < 291):
+        #fill("#0000FF")
+        #colorCode = "#0000FF"
+        x_pos2 = 210
+        print ("210 !!!!!!THe value of x = " + str(mouseX))
+    elif (291< mouseX < 371):
+        #fill("#0000FF")
+        #colorCode = "#0000FF"
+        x_pos2 = 290
+        print ("290 !!!!!!THe value of x = " + str(mouseX))
 def mouseClicked():
     global colorCode
     global colorCount
@@ -53,7 +65,7 @@ def mouseClicked():
         colorCode = "#FFFFF00"
     else:
         colorCode = "#FF0000"
-    global x, y_pos2
+    global x, y_pos2, x_pos2
     if y_pos2 == 50:
         y_pos2 += 90
     else:
