@@ -1,5 +1,17 @@
-cells = [[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],["BLUE",0,0,0,0,0]]
-print ("CELL 0,5 = " + str(cells[0][5]))
+#cells = [[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],["BLUE",0,0,0,0,0]]
+
+#cells 2d-array helps us track the circles .. white (#FFFFFF) is the default color ... 
+cells = [["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF"],["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF"],
+         ["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF"],["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF"],
+         ["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF"],["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF"],
+         ["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF"]]
+col1 = [0,0,0,0,0,0]
+col2 = [0,0,0,0,0,0]
+col3 = [0,0,0,0,0,0]
+col4 = [0,0,0,0,0,0]
+col5 = [0,0,0,0,0,0]
+col6 = [0,0,0,0,0,0]
+col7 = [0,0,0,0,0,0]
 
 
 x = 0
@@ -8,6 +20,8 @@ x_pos2=0
 colorCount = 1
 global colorCode
 colorCode = "#FF0000"
+global currentColor
+currentColor = "#FFFF00"
 
 def setup():
     size(900, 700)
@@ -37,9 +51,11 @@ def draw():
     # x position for first circle
         x_pos = 210
         # White color
-        fill ("#FFFFFF")
+        #fill ("#FFFFFF")
         #Row of circles initally white
         for rows in range (0, 7):
+           # print ("Color at (" + str(columns) + ","  + str(rows) + ") = " + str(cells[rows][columns]))
+            fill(cells[rows][columns])
             ellipse (x_pos, y_pos, 70, 70)
             x_pos = x_pos + 80
         y_pos = y_pos + 80
@@ -52,8 +68,8 @@ def draw():
     '''
     
     
-    fill("#FFFF00")
-    ellipse (x_pos2, y_pos2, 70, 70)
+   # fill("#FFFF00")
+   # ellipse (x_pos2, y_pos2, 70, 70)
     
     '''if mouseClicked:
         fill(204)
@@ -64,7 +80,9 @@ def draw():
     # get the y coordinate and drop the circle to that spot
     # x-positions of the columns 690, 610, 530, 450, 370, 290, 210
     # y-positions of the rows 540,460,380,300,220,140 
-    fill(colorCode)
+    
+    fill(currentColor)
+    # player piece across the top of the board
     ellipse (mouseX, 50 , 70, 70)
     if (175< mouseX < 245):
         #fill("#0000FF")
@@ -105,7 +123,7 @@ def mouseClicked():
     # if the circle is outside the board on either side then raise a error and have 
     # the player put the piece inside the board before clicking
     #
-    global colorCode
+    global colorCode, currentColor
     global colorCount
     colorCount +=1
     ## if the count is even then YELLOW (FFFF00)
@@ -128,11 +146,18 @@ def mouseClicked():
     
     if(x_pos2 == 210):
         print ("XPOS = " + str(x_pos2))
+        if (colorCode == "#FF0000"):
+            colorCode = "#FFFF00"
+            currentColor = "#FF0000"
+        elif (colorCode == "#FFFF00"):
+            colorCode = "#FF0000"
+            currentColor = "#FFFF00"
         # check to see if the rows under that column are empty
         for i in range(0,6):
             print ("i = " + str(i) + " cell = " + str(cells[0][i]))
             #for j in range(0:5)
-            if (cells[0][i] != 0):
+           # if (cells[0][i] != 0):
+            if(col1[i] != 0):
                 # if the top row already has a value then raise an error the player needs to choose another column
                 if (i != 0) :
                     print (" VALUE = " + str(cells[0][i])) 
@@ -141,15 +166,71 @@ def mouseClicked():
                     #    if (item[1] == i):
                     #       y_pos2=item[0]
                     y_pos2=rowdict[i -1]
-                    cells[0][i-1] = "RED"
+                    #cells[0][i-1] = "#FF0000"
+                    cells[0][i-1] = colorCode
+                    col1[i-1] = "RED"
                     print (" row = " + str(y_pos2))
                     break
                 else:
                     print ("ERROR THIS COLUMN IS FULL")
+                    # reset the color code back to the original so that player can go again
+                    if (colorCode == "#FF0000"):
+                        colorCode = "#FFFF00"
+                        currentColor = "#FF0000"
+                    elif (colorCode == "#FFFF00"):
+                        colorCode = "#FF0000"
+                        currentColor = "#FFFF00"
             elif (i == 5):
                 y_pos2 = rowdict[i]
-                cells[0][i] = "RED"
-            print cells[0]  
+                cells[0][i] = colorCode
+                col1[i] = "RED"
+           # print cells[0]  
+            print ("COL1 = " + str(col1))
+    elif(x_pos2 == 290):
+        print ("XPOS = " + str(x_pos2))
+        print ("BEFORE  " + colorCode)
+        if (colorCode == "#FF0000"):
+            colorCode = "#FFFF00"
+            currentColor = "#FF0000"
+        elif (colorCode == "#FFFF00"):
+            colorCode = "#FF0000"
+            currentColor = "#FFFF00"
+            
+        print ("AFTER " + colorCode)
+        # check to see if the rows under that column are empty
+        for a in range(0,6):
+            print ("a = " + str(a) + " cell = " + str(cells[0][a]))
+            #for j in range(0:5)
+           # if (cells[0][i] != 0):
+            if(col2[a] != 0):
+                # if the top row already has a value then raise an error the player needs to choose another column
+                if (a != 0) :
+                    print (" VALUE = " + str(cells[1][a])) 
+                    #listOfItems = rowdict.items()
+                    #for item  in listOfItems:
+                    #    if (item[1] == i):
+                    #       y_pos2=item[0]
+                    y_pos2=rowdict[a -1]
+                    cells[1][a-1] = colorCode
+                    col2[a-1] = "RED"
+                    print (" row = " + str(y_pos2))
+                    break
+                else:
+                    print ("ERROR THIS COLUMN IS FULL")
+                     # reset the color code back to the original so that player can go again
+                    if (colorCode == "#FF0000"):
+                        colorCode = "#FFFF00"
+                        currentColor = "#FF0000"
+                    elif (colorCode == "#FFFF00"):
+                        colorCode = "#FF0000"
+                        currentColor = "#FFFF00"
+            elif (a == 5):
+                y_pos2 = rowdict[a]
+                cells[1][a] = colorCode
+                col2[a] = "RED"
+           # print cells[0]  
+           
+            print ("COL2 = " + str(col2))
             
                 
         
