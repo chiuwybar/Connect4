@@ -1,0 +1,60 @@
+def checkVertical(colNum, colorCheck):
+    
+    colorCount = 0
+    for row in reversed(range(0,6)):
+        if (cells[colNum][row] == colorCheck):
+            colorCount = colorCount + 1
+         #   print ("VERTICAL cell ( " + str(colNum) + " ," + str(row) + ") = " + cells[colNum][row] + " COLOR COUNT = " + str(colorCount))
+            if (colorCount == 4):
+                if (colorCheck == "#FF0000"):
+                    print ("RED WINS")
+                elif (colorCheck == "#FFFF00"): 
+                    print ("YELLOW WINS")
+                return "WINNER"    
+                exit
+        else:
+            #reset yelCount to 0 if the color is not yellow
+            colorCount = 0 
+
+def checkHorizontal(row, colorCheck):
+    
+    colorCount = 0
+    for colNum in range(0,7):
+        if (cells[colNum][row] == colorCheck):
+            colorCount = colorCount + 1
+         #   print ("VERTICAL cell ( " + str(colNum) + " ," + str(row) + ") = " + cells[colNum][row] + " COLOR COUNT = " + str(colorCount))
+            if (colorCount == 4):
+                if (colorCheck == "#FF0000"):
+                    print ("RED WINS")
+                elif (colorCheck == "#FFFF00"): 
+                    print ("YELLOW WINS")
+                return "WINNER"    
+                exit
+        else:
+            #reset yelCount to 0 if the color is not yellow
+            colorCount = 0 
+            
+def checkRightAngle(colorCheck):
+    
+    colorCount1 = 0
+    colorCount2 = 0
+    colorCount3 = 0 
+    colorCount4 = 0 
+    colorCount5 = 0 
+    colorCount6 = 0 
+    for colNum in range(0,7):
+        for row in reversed(range(0,6)):
+            if ((colNum==0 and row ==5) or (colNum==1 and row ==4) or (colNum==2 and row ==3) or (colNum==3 and row ==2) or (colNum==4 and row ==1) 
+                    or (colNum==5 and row ==0)) :
+                if (cells[colNum][row] == colorCheck):
+                    colorCount1 = colorCount1 + 1
+                    #print "color count =" + str(colorCount) + " for " + colorCheck
+                #   print ("VERTICAL cell ( " + str(colNum) + " ," + str(row) + ") = " + cells[colNum][row] + " COLOR COUNT = " + str(colorCount))
+                    if (colorCount1 == 4):
+                        if (colorCheck == "#FF0000"):
+                            print ("RED WINS")
+                        elif (colorCheck == "#FFFF00"): 
+                            print ("YELLOW WINS")
+                        return "WINNER"    
+                        exit
+                else:
