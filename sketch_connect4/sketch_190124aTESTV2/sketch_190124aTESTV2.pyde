@@ -67,7 +67,7 @@ def instructions():
     -4 in a row to win (Diagonally, 
     Vertically, or Horizontally)
     
-    -Click on piece to change turns (red and yellow)
+    -Click to drop piece to closest column
     
     -Random choice on who goes first""",100, 100)
 
