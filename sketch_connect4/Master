@@ -147,6 +147,7 @@ def game():
         # x-positions of the columns 690, 610, 530, 450, 370, 290, 210
         # y-positions of the rows 540,460,380,300,220,140 
         
+        #Drop piece position
         fill(currentColor)
         # player piece across the top of the board
         ellipse (mouseX, 50 , 70, 70)
@@ -259,7 +260,7 @@ def checkVertical(colNum, colorCheck):
             colorCount = 0 
 
 def checkHorizontal(row, colorCheck):
-    
+    #Horizontsl win check
     colorCount = 0
     for colNum in range(0,7):
         if (cells[colNum][row] == colorCheck):
@@ -277,7 +278,7 @@ def checkHorizontal(row, colorCheck):
             colorCount = 0 
             
 def checkRightAngle(colorCheck):
-    
+    #Win check right
     colorCount1 = 0
     colorCount2 = 0
     colorCount3 = 0 
@@ -383,7 +384,7 @@ def checkRightAngle(colorCheck):
                     colorCount6 = 0    
                     
 def checkLeftAngle(colorCheck):
-    
+    #Win check left
     colorCount1 = 0
     colorCount2 = 0
     colorCount3 = 0 
